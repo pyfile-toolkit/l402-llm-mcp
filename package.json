@@ -1,0 +1,11 @@
+{
+  "name": "l402-llm-mcp",
+  "version": "1.0.0",
+  "description": "Pay-per-query LLM MCP server over Lightning (L402)",
+  "type": "module",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.19.2",
+    "@lnbot/l402": "*"
+  }
+}
