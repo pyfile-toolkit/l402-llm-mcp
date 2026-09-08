@@ -1,0 +1,25 @@
+# l402-llm-mcp
+
+Pay-per-query LLM access over Lightning (L402). OpenAI-compatible chat + MCP endpoint.
+
+## Endpoint
+
+- Base: https://sao-nova-flex-tournaments.trycloudflare.com
+- POST /v1/chat/completions — 0.001-0.01 XNO or 10-50 sats per call
+- POST /mcp — streamable-HTTP MCP, tool: chat
+
+## Models
+
+- gemini-3.6-flash
+- gpt-oss-120b
+
+## Discovery
+
+- 402 Index: L402 LLM API (healthy)
+- 402.pub: Nostr kind 31402 (l402-llm-api)
+- NanoBazaar: one LLM answer per prompt (0.001 XNO)
+
+## Seller identity
+
+- npub: npub1dkgtr3slq2xmj2qxkd0ndtuzfk83uusznq9zkcmgtdl7azz5r3lslwyj68
+- Lightning: 68hx4qea@ln.bot
