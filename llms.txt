@@ -1,12 +1,23 @@
 # l402-llm-mcp
 
-Pay-per-query LLM access over Lightning (L402). OpenAI-compatible chat + MCP endpoint.
+Pay-per-query LLM + data tools over Lightning (L402) and x402 (USDC). OpenAI-compatible chat + MCP endpoint.
 
-## Endpoint
+## Endpoints (stable, Tailscale Funnel)
 
-- Base: https://sao-nova-flex-tournaments.trycloudflare.com
-- POST /v1/chat/completions — 0.001-0.01 XNO or 10-50 sats per call
-- POST /mcp — streamable-HTTP MCP, tool: chat
+- L402 / MCP base: https://pyfile-agent.taile3ff35.ts.net:8443
+  - POST /v1/chat/completions — chat completion (10 sats short / 50 sats long)
+  - POST /mcp — streamable-HTTP MCP
+- x402 (USDC on Base/Polygon/Arbitrum): https://pyfile-agent.taile3ff35.ts.net:10000
+  - POST /v1/chat/completions ($0.005), GET /v1/brief ($0.03), GET /data/* ($0.01)
+  - Discovery: https://pyfile-agent.taile3ff35.ts.net:10000/.well-known/x402
+  - OpenAPI 3.1: https://pyfile-agent.taile3ff35.ts.net:10000/openapi.json
+- Nano (XNO): https://pyfile-agent.taile3ff35.ts.net/v1/chat/completions (0.001 XNO)
+
+## MCP tools (6)
+
+- chat — LLM answer (Bearer key required)
+- brief — composite analyst brief: live facts + LLM summary (Bearer key required)
+- dns_lookup, crypto_price, base_gas, wikipedia_summary — free utility data tools
 
 ## Models
 
@@ -15,11 +26,12 @@ Pay-per-query LLM access over Lightning (L402). OpenAI-compatible chat + MCP end
 
 ## Discovery
 
-- 402 Index: L402 LLM API (healthy)
-- 402.pub: Nostr kind 31402 (l402-llm-api)
+- 402 Index: L402 LLM API + x402 (pyfile-toolkit), healthy
+- Official MCP Registry: io.github.pyfile-toolkit/pyfile-llm
+- Nostr kind-30015: pyfile-x402-data (28 endpoints)
 - NanoBazaar: one LLM answer per prompt (0.001 XNO)
 
-## Seller identity
+## Contact
 
-- npub: npub1dkgtr3slq2xmj2qxkd0ndtuzfk83uusznq9zkcmgtdl7azz5r3lslwyj68
-- Lightning: 68hx4qea@ln.bot
+- pyfile-toolkit@mail.ru
+- Source: https://github.com/pyfile-toolkit/nano-llm-api
