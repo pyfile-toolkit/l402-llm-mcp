@@ -2,6 +2,9 @@
 
 Pay-per-query LLM access over Lightning (L402), exposed as an MCP server.
 
+**Website:** [pyfile-toolkit.github.io](https://pyfile-toolkit.github.io) — overview, pricing and discovery across x402, Lightning (L402) and Nano.
+
+
 ## What it is
 
 A single Node.js server that serves two things:
